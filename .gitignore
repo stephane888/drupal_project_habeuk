@@ -6,6 +6,12 @@
 /web/themes/contrib/
 /web/profiles/contrib/
 /web/libraries/
+/composer.lock
+/core/
+/modules/
+/profiles/
+/sites/
+/themes/
 
 # Ignore sensitive information
 /web/sites/*/settings.php
@@ -23,3 +29,17 @@
 
 # Ignore .env files as they are personal
 /.env
+/.csslintrc
+/.editorconfig
+/.eslintignore
+/.eslintrc.json
+/.gitattributes
+/.ht.router.php
+/.htaccess
+/INSTALL.txt
+/autoload.php
+/example.gitignore
+/index.php
+/robots.txt
+/update.php
+/web.config

@@ -5,7 +5,7 @@
     "license": "GPL-2.0-or-later",
     "authors": [
         {
-            "name": "",
+            "name": "Habeuk",
             "role": ""
         }
     ],
@@ -16,20 +16,7 @@
         }
     ],
     "require": {
-        "php": ">=7.4",
-        "composer/installers": "^2.1",
-        "cweagans/composer-patches": "^1.7",
-        "drupal/core-composer-scaffold": "^9.4",
-        "drupal/core-recommended": "^9.4",
-        "drush/drush": "^11.0",
-        "vlucas/phpdotenv": "^5.1",
-        "webflo/drupal-finder": "^1.2"
-    },
-    "require-dev": {
-        "drupal/core-dev": "^9.4"
-    },
-    "conflict": {
-        "drupal/drupal": "*"
+        "drupal-composer/drupal-project": "9.x-dev"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
@@ -44,42 +31,16 @@
         }
     },
     "autoload": {
-        "classmap": [
-            "scripts/composer/ScriptHandler.php"
-        ],
-        "files": ["load.environment.php"]
     },
     "scripts": {
-        "pre-install-cmd": [
-            "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
-        ],
-        "pre-update-cmd": [
-            "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
-        ],
-        "post-install-cmd": [
-            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
-        ],
-        "post-update-cmd": [
-            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
-        ]
     },
     "extra": {
-        "drupal-scaffold": {
-            "locations": {
-                "web-root": "web/"
-            }
-        },
         "installer-paths": {
-            "web/core": ["type:drupal-core"],
-            "web/libraries/{$name}": ["type:drupal-library"],
-            "web/modules/contrib/{$name}": ["type:drupal-module"],
-            "web/profiles/contrib/{$name}": ["type:drupal-profile"],
-            "web/themes/contrib/{$name}": ["type:drupal-theme"],
-            "drush/Commands/contrib/{$name}": ["type:drupal-drush"]
+            "web/modules/custom/{$name}": ["type:drupal-module-custom"],
+            "web/themes/custom/{$name}": ["type:drupal-theme-custom"]
         },
         "composer-exit-on-patch-failure": true,
         "patchLevel": {
-            "drupal/core": "-p2"
         },
         "patches": {
         }
