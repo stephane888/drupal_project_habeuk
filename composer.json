@@ -16,7 +16,8 @@
         }
     ],
     "require": {
-        "drupal-composer/drupal-project": "9.x-dev"
+        "drupal-composer/drupal-project": "9.x-dev",
+        "stephane888/habeuk_profile": "dev-1x"
     },
     "require-dev": {
         "drupal/core-dev": "^9.4"
