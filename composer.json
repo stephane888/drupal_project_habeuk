@@ -68,7 +68,9 @@
             "web/modules/contrib/{$name}": ["type:drupal-module"],
             "web/profiles/contrib/{$name}": ["type:drupal-profile"],
             "web/themes/contrib/{$name}": ["type:drupal-theme"],
-            "drush/Commands/contrib/{$name}": ["type:drupal-drush"]
+            "drush/Commands/contrib/{$name}": ["type:drupal-drush"],
+            "web/modules/custom/{$name}": ["type:drupal-module-custom"],
+            "web/themes/custom/{$name}": ["type:drupal-theme-custom"]
         },
         "composer-exit-on-patch-failure": true,
         "patchLevel": {
