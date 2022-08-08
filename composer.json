@@ -1,84 +1,112 @@
 {
-    "name": "stephane888/drupal_project_habeuk",
-    "description": " Project template drupal for developpeur habeuk.com ",
-    "type": "project",
-    "license": "GPL-2.0-or-later",
-    "authors": [
-        {
-            "name": "Habeuk",
-            "role": ""
-        }
-    ],
-    "repositories": [
-        {
-            "type": "composer",
-            "url": "https://packages.drupal.org/8"
-        }
-    ],
-    "require": {
-        "drupal-composer/drupal-project": "9.x-dev",
-        "drupal/console": "~1.0",
-        "stephane888/habeuk_profile": "dev-1x"
-    },
-    "require-dev": {
-        "drupal/core-dev": "^9.4"
-    },
-    "conflict": {
-        "drupal/drupal": "*"
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true,
-    "config": {
-        "discard-changes": true,
-        "sort-packages": true,
-        "allow-plugins": {
-            "composer/installers": true,
-            "cweagans/composer-patches": true,
-            "drupal/core-composer-scaffold": true,
-            "dealerdirect/phpcodesniffer-composer-installer": true
-        }
-    },
-    "autoload": {
-        "classmap": [
-            "scripts/composer/ScriptHandler.php"
-        ],
-        "files": ["load.environment.php"]
-    },
-    "scripts": {
-        "pre-install-cmd": [
-            "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
-        ],
-        "pre-update-cmd": [
-            "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
-        ],
-        "post-install-cmd": [
-            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
-        ],
-        "post-update-cmd": [
-            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
-        ]
-    },
-    "extra": {
-        "drupal-scaffold": {
-            "locations": {
-                "web-root": "web/"
-            }
-        },
-        "installer-paths": {
-            "web/core": ["type:drupal-core"],
-            "web/libraries/{$name}": ["type:drupal-library"],
-            "web/modules/contrib/{$name}": ["type:drupal-module"],
-            "web/profiles/contrib/{$name}": ["type:drupal-profile"],
-            "web/themes/contrib/{$name}": ["type:drupal-theme"],
-            "drush/Commands/contrib/{$name}": ["type:drupal-drush"],
-            "web/modules/custom/{$name}": ["type:drupal-module-custom"],
-            "web/themes/custom/{$name}": ["type:drupal-theme-custom"]
-        },
-        "composer-exit-on-patch-failure": true,
-        "patchLevel": {
-            "drupal/core": "-p2"
-        },
-        "patches": {
-        }
+  "name": "drupal/recommended-project",
+  "description": "Project template for Drupal 9 projects with a relocated document root",
+  "type": "project",
+  "license": "GPL-2.0-or-later",
+  "homepage": "https://www.drupal.org/project/drupal",
+  "support": {
+    "docs": "https://www.drupal.org/docs/user_guide/en/index.html",
+    "chat": "https://www.drupal.org/node/314178"
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://packages.drupal.org/8"
     }
+  ],
+  "require": {
+    "composer/installers": "^1.9",
+    "drupal/console": "~1.0",
+    "drupal/core-composer-scaffold": "^9.4",
+    "drupal/core-project-message": "^9.4",
+    "drupal/core-recommended": "^9.4",
+    "drush/drush": "^11.1",
+    "stephane888/habeuk_profile": "^1.0 | dev-1x"
+  },
+  
+  "require-dev": {
+    "kint-php/kint": "^3.3"
+  },
+  "conflict": {
+    "drupal/drupal": "*"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "config": {
+    "allow-plugins": {
+      "composer/installers": true,
+      "drupal/core-composer-scaffold": true,
+      "drupal/core-project-message": true,
+      "dealerdirect/phpcodesniffer-composer-installer": true
+    },
+    "sort-packages": true
+  },
+  "autoload": {
+        "classmap": [
+            "scripts/DrupalSkeletor.php"
+        ]
+  },
+  "scripts" : {
+  	"npm-install": "DrupalHabeuk\\NpmPackage::npmInstall"
+  },
+  "extra": {
+    "drupal-scaffold": {
+      "locations": {
+        "web-root": "web/"
+      }
+    },
+    "installer-paths": {
+      "web/core": [
+        "type:drupal-core"
+      ],
+      "web/libraries/{$name}": [
+        "type:drupal-library"
+      ],
+      "web/modules/contrib/{$name}": [
+        "type:drupal-module"
+      ],
+      "web/profiles/contrib/{$name}": [
+        "type:drupal-profile"
+      ],
+      "web/themes/contrib/{$name}": [
+        "type:drupal-theme"
+      ],
+      "drush/Commands/contrib/{$name}": [
+        "type:drupal-drush"
+      ],
+      "web/modules/custom/{$name}": [
+        "type:drupal-custom-module",
+        "type:drupal-module-custom"
+      ],
+      "web/profiles/custom/{$name}": [
+        "type:drupal-custom-profile"
+      ],
+      "web/themes/custom/{$name}": [
+        "type:drupal-custom-theme",
+        "type:drupal-theme-custom"
+      ]
+    },
+    "drupal-core-project-message": {
+      "include-keys": [
+        "homepage",
+        "support"
+      ],
+      "post-create-project-cmd-message": [
+        "<bg=blue;fg=white>                                                         </>",
+        "<bg=blue;fg=white>  Congratulations, you’ve installed the Drupal codebase  </>",
+        "<bg=blue;fg=white>  from the wb-horizon template!          	    </>",
+        "<bg=blue;fg=white>                                                         </>",
+        "",
+        "<bg=yellow;fg=black>Next steps</>:",
+        "  * Install the site: https://www.drupal.org/docs/8/install",
+        "  * Read the user guide: https://www.drupal.org/docs/user_guide/en/index.html",
+        "  * Get support: https://www.drupal.org/support",
+        "  * Get involved with the Drupal community:",
+        "      https://www.drupal.org/getting-involved",
+        "  * Remove the plugin that prints this message:",
+        "      composer remove drupal/core-project-message"
+      ]
+    }
+  }
+  
 }
