@@ -47,7 +47,13 @@
         ]
   },
   "scripts" : {
-  	"npm-install": "DrupalHabeuk\\NpmPackage::npmInstall"
+  	"npm-install": "DrupalHabeuk\\NpmPackage::npmInstall",
+  	 "post-install-cmd": [
+            "DrupalHabeuk\\NpmPackage::npmInstall"
+        ],
+        "post-update-cmd": [
+            "DrupalHabeuk\\NpmPackage::npmInstall"
+        ]
   },
   "extra": {
     "drupal-scaffold": {
