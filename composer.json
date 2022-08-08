@@ -17,6 +17,7 @@
     ],
     "require": {
         "drupal-composer/drupal-project": "9.x-dev",
+        "drupal/console": "~1.0",
         "stephane888/habeuk_profile": "dev-1x"
     },
     "require-dev": {
