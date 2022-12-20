@@ -21,7 +21,7 @@
     "drupal/core-project-message": "^9.5",
     "drupal/core-recommended": "^9.5",
     "drush/drush": "^11.1",
-    "stephane888/habeuk_profile": "^1.0 | dev-1x"
+    "stephane888/habeuk_profile": "^2.0 | dev-2x"
   },
   
   "require-dev": {
