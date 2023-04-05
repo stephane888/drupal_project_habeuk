@@ -98,7 +98,7 @@
       "post-create-project-cmd-message": [
 	"<bg=blue;fg=white>                                                         </>",
 	"<bg=blue;fg=white>  Congratulations, you've installed the Drupal codebase  </>",
-	"<bg=blue;fg=white>  from the wb-horizon template!                          </>",
+	"<bg=blue;fg=white>  from the habeuk.com template!                          </>",
 	"<bg=blue;fg=white>                                                         </>",
 	"",
 	"<bg=yellow;fg=black>Next steps</>:",
