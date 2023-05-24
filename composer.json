@@ -85,6 +85,8 @@
         "type:drupal-theme-custom"
       ]
     },
+    "patches": {
+    },
     "drupal-core-project-message": {
       "include-keys": [
         "homepage",
